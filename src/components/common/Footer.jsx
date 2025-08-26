@@ -18,34 +18,24 @@ const Footer = () => {
         <nav className="mb-12">
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
             <Link 
+              href="/" 
+              className="text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium"
+            >
+              Home
+            </Link>
+           
+            <Link 
               href="/about" 
               className="text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium"
             >
-              About
+              About Us
             </Link>
             <Link 
-              href="/features" 
+              href="/contact" 
               className="text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium"
             >
-              Features
-            </Link>
-            <Link 
-              href="/works" 
-              className="text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium"
-            >
-              Works
-            </Link>
-            <Link 
-              href="/support" 
-              className="text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium"
-            >
-              Support
-            </Link>
-            <Link 
-              href="/help" 
-              className="text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium"
-            >
-              Help
+              
+              Contact Us
             </Link>
           </div>
         </nav>
