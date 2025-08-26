@@ -11,7 +11,7 @@ const foundersData = [
     name: "Shamim Hossain",
     title: "Founder",
     bio: "Shamim Hossain is the foundational Founder who provided the original spark and core ethos for the company. His profound understanding of the service industry and his unwavering commitment to integrity laid the essential groundwork for our success. Today, Shamim serves as a guiding mentor, ensuring the company's growth and innovation remain true to the founding principles of reliability and absolute professionalism",
-    image: "/founders/owner.jpg", 
+    image: "/founders/owner.png", 
   },
   {
     name: "Rahim Shaikh",

@@ -7,10 +7,9 @@ import { Clock, MapPin, Phone, Send, Loader, CheckCircle } from "lucide-react";
 
 // --- Data for the contact info cards ---
 const contactDetails = [
-  { icon: Clock, title: "USA Office Hours", lines: ["Monday-Friday", "8:00 am to 5:00 pm"] },
-  { icon: MapPin, title: "Our Address", lines: ["8502 Preston Rd. Ingle,", "Maine 98380, USA"] },
-  { icon: Clock, title: "Canada Office Hours", lines: ["Monday-Friday", "8:00 am to 5:00 pm"] },
-  { icon: Phone, title: "Get In Touch", lines: ["+1-246-888-0653", "+1-222-632-0194"] },
+  { icon: Clock, title: "USA Office Hours", lines: ["Monday-Friday", "9:00 am to 6:00 pm"] },
+  { icon: MapPin, title: "Our Address", lines: ["Al Mamzar Building , Dubai"] },
+  { icon: Phone, title: "Get In Touch", lines: ["+971 561464784", "+971 543308944"] },
 ];
 
 // --- Reusable Components ---
@@ -28,7 +27,7 @@ const ContactInfoCard = ({ icon: Icon, title, lines }) => (
 
 const FormField = ({ label, name, type, placeholder, value, onChange, isTextarea = false, delay }) => {
   const commonProps = {
-    name, id: name, placeholder, value, onChange,
+    name, id: name, placeholder, value, onChange, required: !name.includes("Phone"), // Phone is optional
     className: "w-full px-4 py-3 bg-slate-100 border text-black border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300",
   };
   return (
@@ -51,8 +50,8 @@ export default function FullContactPage() {
   const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", phone: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState(null);
 
-  // --- THIS IS THE CORRECTED FUNCTION ---
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -61,11 +60,39 @@ export default function FullContactPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // --- Simulate API call ---
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    console.log("Form Submitted:", formData);
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    setError(null);
+
+    // IMPORTANT: Get the Google Script URL from your environment variables
+    const scriptURL = "https://script.google.com/macros/s/AKfycbw-X6MZsrO8nYc_qU4uRTQhseZxMaFXE891uuEkajektFrMP4cq8EhAVFuyZpln-vFX/exec";
+    if (!scriptURL) {
+      console.error("Google Script URL is not defined in .env.local");
+      setError("The form is not configured correctly. Please contact support.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const response = await fetch(scriptURL, {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      const result = await response.json();
+
+      if (result.status === 'success') {
+        console.log("Form Submitted Successfully!");
+        setIsSubmitted(true);
+      } else {
+        throw new Error(result.message || 'An unknown error occurred.');
+      }
+      
+    } catch (err) {
+      console.error('Form submission error:', err);
+      setError('Failed to send message. Please check your connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -81,7 +108,7 @@ export default function FullContactPage() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 tracking-tight">
-              Love to hear from you<br />Get in touch
+              Love to hear from you,<br />Get in touch
             </h1>
             <p className="mt-6 text-lg text-slate-600 leading-8">
               We&apos;re here to answer any questions and help you get started. Reach out to us through any of the channels below.
@@ -128,7 +155,7 @@ export default function FullContactPage() {
             >
               <CheckCircle className="w-16 h-16 mx-auto text-green-500 mb-4" />
               <h2 className="text-3xl font-bold text-slate-900">Thank You!</h2>
-              <p className="text-slate-600 mt-2">Your message has been sent. We&apos;ll be in touch shortly.</p>
+              <p className="text-slate-600 mt-2">Your message has been sent. We&apos;ll get back to you as soon as possible. You&apos;ll be in touch shortly.</p>
             </motion.div>
           ) : (
             <>
@@ -151,6 +178,8 @@ export default function FullContactPage() {
                 <FormField label="Email Address" name="email" type="email" placeholder="you@example.com" value={formData.email} onChange={handleChange} delay={0.3} />
                 <FormField label="Phone Number (Optional)" name="phone" type="tel" placeholder="+1 (555) 123-4567" value={formData.phone} onChange={handleChange} delay={0.4} />
                 <FormField label="Your Message" name="message" placeholder="Tell us about your event..." value={formData.message} onChange={handleChange} isTextarea delay={0.5} />
+                
+                {error && <p className="text-red-500 text-sm text-center font-medium">{error}</p>}
                 
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
