@@ -154,7 +154,7 @@ export default function AboutClient() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 <div className={`relative h-96 rounded-2xl overflow-hidden ${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
-                  <Image src={founder.image} layout="fill" objectFit="cover" style={{ objectPosition: founder.name === "Shamim Hossain" ? "center" : "top" }} alt={`Portrait of ${founder.name}`} />
+                  <Image src={founder.image} layout="fill" objectFit="cover" style={{ objectPosition:  "top" }} alt={`Portrait of ${founder.name}`} />
                 </div>
                 <div className={`text-center md:text-left ${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
                   <p className="text-amber-600 font-semibold">{founder.title}</p>
