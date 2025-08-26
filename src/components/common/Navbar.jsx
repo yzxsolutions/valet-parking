@@ -59,8 +59,6 @@ export default function Navbar({ className }) {
         {/* Contact Menu Item (Simple Link) */}
         <HoveredLink href="/contact">Contact</HoveredLink>
 
-        {/* Quote Menu Item (Simple Link) */}
-        <HoveredLink href="/get-a-quote">Get a Quote</HoveredLink>
       </Menu>
     </div>
   );
