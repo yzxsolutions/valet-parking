@@ -1,11 +1,17 @@
 'use client';
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
+import ServiceModal from "../common/ServiceModal";
+import CallModal from "../common/CallModal";
 
 export default function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+ const [isModalOpen, setIsModalOpen] = useState(false); // Only need to track if modal is open
+ const [isCallModalOpen, setIsCallModalOpen] = useState(false); // Only need to track if modal is open
+
 
   useEffect(() => {
     // Trigger the initial animation after component mounts
@@ -45,6 +51,23 @@ export default function HeroSection() {
     return `translateX(${rightOffset}vw)`;
   };
 
+
+   const openModal = () => { // Renamed from openServiceModal
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => { // Renamed from closeServiceModal
+    setIsModalOpen(false);
+  };
+
+  const openCallModal = () => { // Renamed from openServiceModal
+    setIsCallModalOpen(true);
+  };
+
+  const closeCallModal = () => { // Renamed from closeServiceModal
+    setIsCallModalOpen(false);
+  };
+
   return (
     <section className="relative min-h-[90vh] md:min-h-screen bg-[#ffffff] overflow-hidden">
       {/* Header */}
@@ -59,7 +82,7 @@ export default function HeroSection() {
           />
         </div>
         
-        <button className="bg-[#EF522D] hidden text-white px-6 py-3 rounded-full md:flex items-center gap-2 hover:bg-[#d4441f] transition-colors">
+        <button onClick={openCallModal} className="bg-[#EF522D]  text-white px-6 py-3 rounded-full flex items-center gap-2 hover:bg-[#d4441f] transition-colors">
           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
             <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
           </svg>
@@ -86,9 +109,11 @@ export default function HeroSection() {
             every guest feel valued and secure.
           </p>
           
-          <button className="border-2 border-[#EF522D] text-[#EF522D] px-8 py-4 rounded-full text-lg font-medium hover:bg-[#EF522D] hover:text-white transition-all duration-300">
+          
+            <button onClick={openModal}  className="border-2 border-[#EF522D] text-[#EF522D] px-8 py-4 rounded-full text-lg font-medium hover:bg-[#EF522D] hover:text-white transition-all duration-300">
             See Our Services
           </button>
+       
         </div>
       </div>
 
@@ -110,6 +135,14 @@ export default function HeroSection() {
           />
         </div>
       </div>
+       <ServiceModal
+        isOpen={isModalOpen} 
+        onClose={closeModal} 
+      />
+      <CallModal
+  isOpen={isCallModalOpen} 
+  onClose={closeCallModal} 
+/>
     </section>
   );
 }

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Shield, Users, Clock, Award, X, Car, CheckCircle, Star } from 'lucide-react';
 import { PlaceholdersAndVanishInput } from '../ui/placeholders-and-vanish-input';
+import Link from 'next/link';
 
 const ChooseUs = () => {
   const [selectedCard, setSelectedCard] = useState(null);
@@ -347,13 +348,15 @@ const ChooseUs = () => {
                   </div>
 
                   {/* CTA Button */}
-                  <motion.button
+                 <Link href="/contact">
+                  <motion.button 
                     className="w-full mt-8 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold py-4 px-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
                     Book Our Valet Service
                   </motion.button>
+                 </Link>
                 </motion.div>
               </motion.div>
             </>

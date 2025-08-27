@@ -88,7 +88,7 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="relative scrollbar-hide flex h-[35rem] lg:h-[40rem] w-full justify-center lg:justify-between space-x-0 lg:space-x-12 overflow-y-auto rounded-xl p-6 lg:p-12"
+      className="relative scrollbar-hide flex h-[30rem] lg:h-[32rem] w-full justify-center lg:justify-between space-x-0 lg:space-x-12 overflow-y-auto rounded-xl p-6 lg:p-12"
       ref={ref}
       transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
     >

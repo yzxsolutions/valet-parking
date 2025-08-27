@@ -100,6 +100,7 @@ export default function AboutClient() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
+          
           <p className="text-amber-400 font-semibold mb-2">Our Genesis</p>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight">
             Crafting the First Impression
@@ -123,6 +124,7 @@ export default function AboutClient() {
       <section className="py-24 md:py-32 px-4 bg-slate-100 text-slate-800">
         <div className="max-w-4xl mx-auto text-center">
             <SectionHeader>
+              <Image src="/icons/logo.svg" width={250} height={250} alt="Logo" className="mx-auto mb-6" />
                 <h2 className="text-3xl md:text-5xl font-bold mb-6">
                     More Than Just Parking.<br/> It&apos;s <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-orange-500">Peace of Mind.</span>
                 </h2>
@@ -166,28 +168,7 @@ export default function AboutClient() {
           </div>
         </div>
       </section>
-      
-      {/* Timeline Section - Glassmorphism */}
-      <section className="py-24 md:py-32 px-4 relative">
-        <div className="absolute inset-0 z-0">
-          <Image src="/backgrounds/story-hero-dark.jpg" layout="fill" objectFit="cover" alt="Abstract background" className="opacity-20 blur-sm" />
-        </div>
-        <div className="relative z-10 max-w-6xl mx-auto">
-          <SectionHeader>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold">Our Journey to Excellence</h2>
-              <p className="mt-3 text-lg text-slate-300">Key milestones that defined our path.</p>
-            </div>
-          </SectionHeader>
-          <div className="relative flex flex-col md:items-center">
-            {/* The vertical line for desktop */}
-            <div className="hidden md:block absolute top-0 bottom-0 left-1/2 w-0.5 bg-white/20"></div>
-            {timelineData.map((item, index) => (
-              <TimelineItem key={index} item={item} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
+    
 
     </div>
   );
