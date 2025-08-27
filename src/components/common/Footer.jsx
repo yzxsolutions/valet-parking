@@ -74,7 +74,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="text-gray-500 text-sm">
-          © Copyright 2021, All Rights Reserved
+          © Copyright 2025, Created by <Link href="https://codeteak.com">Codeteak Technologies PVT.LTD</Link> 
         </div>
       </div>
     </footer>
