@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Users, TrafficCone, Zap, ShieldCheck, CheckCircle, ArrowRight, Briefcase, Clock } from 'lucide-react';
+import Link from 'next/link';
 
 // --- Icon Map ---
 // This map translates the string from your JSON into an actual component
@@ -163,10 +164,12 @@ const ServicePageClient = ({ serviceData }) => {
             <motion.section className="bg-slate-800 rounded-2xl p-12 text-center" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <h2 className="text-3xl font-bold text-white mb-4">{cta.headline}</h2>
             <p className="text-lg text-slate-300 max-w-2xl mx-auto mb-8">{cta.subtext}</p>
+            <Link href="/contact">
             <motion.button className="inline-flex items-center space-x-2 bg-amber-500 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg" whileHover={{ scale: 1.05, backgroundColor: '#f59e0b' }} whileTap={{ scale: 0.95 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }}>
               <span>{cta.buttonText}</span>
               <ArrowRight className="w-5 h-5" />
             </motion.button>
+            </Link>
           </motion.section>
         )}
       </div>

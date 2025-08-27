@@ -1,7 +1,7 @@
 {
   "privateEvents": {
     "title": "Private Event Valet Services",
-    "overview": "Ensure your guests enjoy a seamless and sophisticated arrival and departure with our professional private event valet service. We eliminate the stress of parking for any occasion, from intimate gatherings to large-scale celebrations, allowing your guests to focus on enjoying the event. Our experienced team is dedicated to providing a five-star experience that adds a touch of elegance and convenience to your special day.",
+    "overview": "Ensure your guests enjoy a seamless and sophisticated arrival and departure with our professional private event valet service. ",
     "sections": [
       {
         "title": "A Touch of Class for Any Occasion",
@@ -73,7 +73,7 @@
       "alt": "Valet attendant assisting a guest at a restaurant entrance."
     },
     "title": "Restaurant & Hotel Valet Parking",
-    "overview": "Elevate your guest experience from the moment they arrive with our premier valet parking services for restaurants and hotels. A seamless and welcoming arrival sets the tone for a positive stay or dining experience. Our professional valet attendants provide a warm greeting and efficient service, ensuring your guests feel valued and cared for before they even step through the door.",
+    "overview": "Elevate your guest experience from the moment they arrive with our premier valet parking services for restaurants and hotels. A seamless and welcoming arrival sets the tone for a positive stay or dining experience. ",
     "sections": [
       {
         "title": "The First and Last Impression Matters",
@@ -140,11 +140,11 @@
       "alt": "Valet attendant assisting a guest at a corporate event entrance."
     },
     "title": "Valet for Corporate Functions",
-    "overview": "Project an image of professionalism and attention to detail from the very beginning with our executive valet parking solutions for corporate functions. We provide seamless and efficient valet services for corporate parties, conferences, networking events, and executive meetings. A hassle-free parking experience allows your attendees to focus on the business at hand while we handle the logistics of their arrival and departure.",
+    "overview": "Project an image of professionalism and attention to detail from the very beginning with our executive valet parking solutions for corporate functions. ",
     "sections": [
       {
         "title": "Setting the Tone for Business",
-        "content": "In the corporate world, first impressions are crucial. The moment your attendees arrive, they are forming an opinion of your company. A well-organized and courteous valet service sets a professional tone for your entire event, demonstrating your commitment to a high-quality experience for your guests, clients, and partners. This attention to detail can significantly reinforce your brand's reputation for excellence.",
+        "content": "In the corporate world, first impressions are crucial. The moment your attendees arrive, they are forming an opinion of your company.",
         "image": "/about/corporate.jpg"
       },
       {
