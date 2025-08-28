@@ -134,7 +134,7 @@ export default function ProcessSection() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             {/* Stats are now more responsive */}
-            <div className="text-center">
+            {/* <div className="text-center">
               <div className="text-2xl md:text-3xl font-bold text-slate-800">
                 <CountUp from={0} to={50} duration={2} />+
               </div>
@@ -155,7 +155,7 @@ export default function ProcessSection() {
             <div className="text-center">
               <div className="text-2xl md:text-3xl font-bold text-slate-800">24/7</div>
               <div className="text-sm text-slate-500">Service Available</div>
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </div>

@@ -7,7 +7,7 @@ import { Clock, MapPin, Phone, Send, Loader, CheckCircle } from "lucide-react";
 
 // --- Data for the contact info cards ---
 const contactDetails = [
-  { icon: Clock, title: "USA Office Hours", lines: ["Monday-Friday", "9:00 am to 6:00 pm"] },
+  { icon: Clock, title: "Dubai Office Hours", lines: ["Monday-Friday", "9:00 am to 6:00 pm"] },
   { icon: MapPin, title: "Our Address", lines: ["Al Mamzar Building , Dubai"] },
   { icon: Phone, title: "Get In Touch", lines: ["+971 561464784", "+971 543308944"] },
 ];

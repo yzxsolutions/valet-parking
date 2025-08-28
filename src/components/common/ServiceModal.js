@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { XMarkIcon, ArrowLeftIcon } from '@heroicons/react/24/outline';
 import serviceData from '../../../data/serviceData.json'; 
+import Link from "next/link";
 
 export default function ServiceModal({ isOpen, onClose }) {
   const [currentServiceKey, setCurrentServiceKey] = useState(null);
@@ -220,9 +221,11 @@ export default function ServiceModal({ isOpen, onClose }) {
                       <p className="text-gray-700 text-lg mb-6">
                         {currentServiceData.cta.subtext}
                       </p>
+                     <Link href="/contact">
                       <button className="bg-[#EF522D] text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-[#d4441f] transition-colors">
                         {currentServiceData.cta.buttonText}
                       </button>
+                     </Link>
                     </div>
                   )}
                 </div>
