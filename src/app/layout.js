@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   // metadataBase is crucial for resolving absolute paths for social media images.
   // Replace with your actual production domain.
-  metadataBase: new URL('https://www.qasaralhaya.netlify.app'), // IMPORTANT: Change this to your domain
+  metadataBase: new URL('https://www.qhvalet.com'), // IMPORTANT: Change this to your domain
 
   // Best practice for SEO and page titles
   title: {
@@ -27,17 +27,8 @@ export const metadata = {
     template: "%s | Qasar Al Haya Valet Parking",
   },
   description: "Qasar Al Haya offers professional, reliable, and elegant valet parking solutions for private events, corporate functions, hotels, and restaurants.",
-  
   // --- All icons are now managed here ---
-  icons: {
-    icon: [
-      { url: '/icons/tab-logo.ico', type: 'image/x-icon', sizes: 'any' },
-      { url: '/icons/logo.svg', type: 'image/svg+xml' },
-    ],
-    apple: '/icons/tab-logo.png', // For Apple devices
-    shortcut: '/icons/tab-logo.ico',
-  },
-
+  icon: '/favicon.ico',
   // --- Web App Manifest ---
   manifest: '/site.webmanifest',
 
@@ -45,7 +36,7 @@ export const metadata = {
   openGraph: {
     title: 'Qasar Al Haya | Premium Valet Parking Services',
     description: 'Elevate your guest experience with our professional valet parking solutions.',
-    url: 'https://www.qasaralhaya.com', // IMPORTANT: Change this to your domain
+    url: 'https://www.qhvalet.com', // IMPORTANT: Change this to your domain
     siteName: 'Qasar Al Haya Valet Parking',
     images: [
       {
